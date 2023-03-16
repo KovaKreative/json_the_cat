@@ -7,11 +7,9 @@ fetchBreedDescription(breedName, (error, body) => {
     console.log("Request failed with " + error);
     return;
   }
-  const parseBody = JSON.parse(body);
-  if (!parseBody.length) {
-    console.log("No results");
+  if(!body) {
+    console.log("Search failed.");
     return;
   }
-  const output = parseBody[0].description;
-  console.log(output);
+  console.log(body);
 });
